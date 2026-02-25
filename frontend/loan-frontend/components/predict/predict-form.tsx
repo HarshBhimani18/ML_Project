@@ -170,14 +170,14 @@ export function PredictForm() {
     }
 
     setIsLoading(true);
-    const payload: Record<string, number | string> = { ...form };
-    for (const key of numericFields) payload[key] = Number(form[key]);
+    const formData: Record<string, number | string> = { ...form };
+    for (const key of numericFields) formData[key] = Number(form[key]);
 
     try {
       const response = await fetch(`${API_URL}/predict`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ data: payload }),
+        body: JSON.stringify({ data: formData }),
       });
 
       const data: PredictionResponse = await response.json();
