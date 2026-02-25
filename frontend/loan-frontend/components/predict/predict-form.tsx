@@ -198,15 +198,15 @@ export function PredictForm() {
   return (
     <Card className="p-6 sm:p-8">
       <div className="mb-6">
-        <h1 className="text-2xl font-semibold text-[var(--foreground)] sm:text-3xl">Predict Default Risk</h1>
-        <p className="mt-2 text-sm text-[var(--muted-foreground)]">
+        <h1 className="page-title font-semibold text-[var(--foreground)]">Predict Default Risk</h1>
+        <p className="body-text mt-2 text-[var(--muted-foreground)]">
           Enter borrower details below and submit to run model inference.
         </p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <section className="space-y-4">
-          <h2 className="text-sm font-semibold uppercase tracking-[0.12em] text-[var(--muted-foreground)]">
+          <h2 className="small-label font-semibold uppercase tracking-[0.12em] text-[var(--muted-foreground)]">
             Financial Information
           </h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -251,7 +251,7 @@ export function PredictForm() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-sm font-semibold uppercase tracking-[0.12em] text-[var(--muted-foreground)]">
+          <h2 className="small-label font-semibold uppercase tracking-[0.12em] text-[var(--muted-foreground)]">
             Personal Information
           </h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -308,7 +308,7 @@ export function PredictForm() {
         </section>
 
         {error && (
-          <div className="rounded-lg border border-[var(--border)] bg-[var(--muted)] px-4 py-3 text-sm text-[var(--foreground)]">
+          <div className="body-text rounded-lg border border-[var(--border)] bg-[var(--muted)] px-4 py-3 text-[var(--foreground)]">
             {error}
           </div>
         )}
@@ -317,7 +317,7 @@ export function PredictForm() {
           <Button type="submit" disabled={isLoading}>
             {isLoading ? "Predicting..." : "Predict Default Risk"}
           </Button>
-          <span className="font-code text-xs text-[var(--muted-foreground)]">API: POST /predict</span>
+          <span className="small-label font-code text-[var(--muted-foreground)]">API: POST /predict</span>
         </div>
       </form>
     </Card>

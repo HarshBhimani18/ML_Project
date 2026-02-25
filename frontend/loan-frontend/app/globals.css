@@ -2,21 +2,21 @@
 
 :root {
   --primary: #e78a53;
-  --primary-foreground: #121113;
+  --primary-foreground: #ffffff;
   --secondary: #5f8787;
-  --secondary-foreground: #121113;
+  --secondary-foreground: #ffffff;
   --accent: #333333;
-  --accent-foreground: #c1c1c1;
+  --accent-foreground: #ffffff;
   --background: #121113;
-  --foreground: #c1c1c1;
+  --foreground: #ffffff;
   --card: #121212;
-  --card-foreground: #c1c1c1;
+  --card-foreground: #ffffff;
   --popover: #121113;
-  --popover-foreground: #c1c1c1;
+  --popover-foreground: #ffffff;
   --muted: #222222;
-  --muted-foreground: #888888;
+  --muted-foreground: #ffffff;
   --destructive: #5f8787;
-  --destructive-foreground: #121113;
+  --destructive-foreground: #ffffff;
   --border: #222222;
   --input: #222222;
   --ring: #e78a53;
@@ -26,25 +26,39 @@
   --chart-4: #888888;
   --chart-5: #999999;
   --sidebar: #121212;
-  --sidebar-foreground: #c1c1c1;
+  --sidebar-foreground: #ffffff;
   --sidebar-primary: #e78a53;
-  --sidebar-primary-foreground: #121113;
+  --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #333333;
-  --sidebar-accent-foreground: #c1c1c1;
+  --sidebar-accent-foreground: #ffffff;
   --sidebar-border: #222222;
   --sidebar-ring: #e78a53;
   --primary-hover: #d9783f;
   --success: #16a34a;
   --warning: #f59e0b;
   --danger: #dc2626;
+
+  --text-page-title-min: 1.75rem;
+  --text-page-title-max: 2rem;
+  --text-section-heading-min: 1.25rem;
+  --text-section-heading-max: 1.5rem;
+  --text-card-title: 1.125rem;
+  --text-body-min: 0.875rem;
+  --text-body-max: 1rem;
+  --text-label-min: 0.75rem;
+  --text-label-max: 0.8125rem;
+  --text-button-min: 0.875rem;
+  --text-button-max: 1rem;
+  --text-input-min: 0.875rem;
+  --text-input-max: 1rem;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-mono);
-  --font-mono: var(--font-geist-mono);
-  --font-code: var(--font-jetbrains-mono);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-inter);
+  --font-code: var(--font-inter);
 }
 
 * {
@@ -56,13 +70,12 @@ body {
   min-height: 100vh;
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-mono), monospace;
+  font-family: "Inter", var(--font-inter), sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
-  font-variant-numeric: tabular-nums;
   line-height: 1.5;
+  font-size: clamp(var(--text-body-min), 0.8vw + 0.7rem, var(--text-body-max));
 }
 
 .app-card {
@@ -80,6 +93,7 @@ body {
   background: var(--muted);
   color: var(--foreground);
   padding: 0.625rem 0.75rem;
+  font-size: clamp(var(--text-input-min), 0.45vw + 0.75rem, var(--text-input-max));
   outline: none;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
@@ -90,7 +104,7 @@ body {
 }
 
 .app-label {
-  font-size: 0.875rem;
+  font-size: clamp(var(--text-label-min), 0.2vw + 0.7rem, var(--text-label-max));
   color: var(--foreground);
   font-weight: 500;
 }
@@ -107,9 +121,37 @@ h3 {
 }
 
 .font-brand {
-  font-family: var(--font-geist-mono), monospace;
+  font-family: "Inter", var(--font-inter), sans-serif;
 }
 
 .font-code {
-  font-family: var(--font-jetbrains-mono), monospace;
+  font-family: "Inter", var(--font-inter), sans-serif;
+}
+
+.page-title {
+  font-size: clamp(var(--text-page-title-min), 1.4vw + 1.4rem, var(--text-page-title-max));
+}
+
+.section-heading {
+  font-size: clamp(var(--text-section-heading-min), 1vw + 1rem, var(--text-section-heading-max));
+}
+
+.card-title {
+  font-size: var(--text-card-title);
+}
+
+.body-text {
+  font-size: clamp(var(--text-body-min), 0.8vw + 0.7rem, var(--text-body-max));
+}
+
+.small-label {
+  font-size: clamp(var(--text-label-min), 0.2vw + 0.7rem, var(--text-label-max));
+}
+
+.text-button {
+  font-size: clamp(var(--text-button-min), 0.45vw + 0.75rem, var(--text-button-max));
+}
+
+.text-input {
+  font-size: clamp(var(--text-input-min), 0.45vw + 0.75rem, var(--text-input-max));
 }

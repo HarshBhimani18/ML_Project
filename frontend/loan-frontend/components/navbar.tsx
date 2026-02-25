@@ -15,7 +15,7 @@ export function Navbar() {
     <header className="sticky top-0 z-40 border-b border-[var(--border)] bg-[var(--background)]/95 backdrop-blur supports-[backdrop-filter]:bg-[var(--background)]/90">
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="text-[var(--foreground)] transition-colors hover:text-[var(--primary)]">
-          <span className="font-brand text-xl font-semibold tracking-tight sm:text-2xl">LoanGuard AI</span>
+          <span className="font-brand section-heading font-semibold tracking-tight">LoanGuard AI</span>
         </Link>
 
         <div className="flex items-center gap-2">
@@ -26,7 +26,7 @@ export function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`rounded-md px-3 py-1.5 text-sm font-medium tracking-tight transition-colors ${
+                  className={`text-button rounded-md px-3 py-1.5 font-medium tracking-tight transition-colors ${
                     active
                       ? "bg-[var(--primary)] text-[var(--primary-foreground)]"
                       : "text-[var(--accent-foreground)] hover:bg-[var(--muted)] hover:text-[var(--foreground)]"
@@ -41,7 +41,7 @@ export function Navbar() {
             href="https://github.com/HarshBhimani18"
             target="_blank"
             rel="noreferrer"
-            className="rounded-md border border-[var(--secondary)] bg-[var(--secondary)] px-3 py-1.5 text-sm font-medium tracking-tight text-[var(--secondary-foreground)] transition-colors hover:opacity-90"
+            className="text-button rounded-md border border-[var(--secondary)] bg-[var(--secondary)] px-3 py-1.5 font-medium tracking-tight text-[var(--secondary-foreground)] transition-colors hover:opacity-90"
           >
             GitHub
           </a>

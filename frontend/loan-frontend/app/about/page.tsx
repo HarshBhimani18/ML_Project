@@ -11,9 +11,9 @@ export default function AboutPage() {
   return (
     <div className="space-y-6">
       <Card className="p-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--muted-foreground)]">About</p>
-        <h1 className="mt-2 text-3xl font-semibold text-[var(--foreground)]">LoanGuard AI Platform</h1>
-        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-[var(--muted-foreground)]">
+        <p className="small-label font-semibold uppercase tracking-[0.2em] text-[var(--muted-foreground)]">About</p>
+        <h1 className="page-title mt-2 font-semibold text-[var(--foreground)]">LoanGuard AI Platform</h1>
+        <p className="body-text mt-3 max-w-3xl leading-relaxed text-[var(--muted-foreground)]">
           LoanGuard AI is a professional web application for machine learning-based loan default
           risk prediction. It provides a simple workflow for data input, model inference, and
           readable risk analytics.
@@ -23,7 +23,7 @@ export default function AboutPage() {
       <section className="grid gap-4 md:grid-cols-2">
         {points.map((point) => (
           <Card key={point} className="p-5 transition-shadow hover:shadow-md">
-            <p className="text-sm leading-relaxed text-[var(--muted-foreground)]">{point}</p>
+            <p className="body-text leading-relaxed text-[var(--muted-foreground)]">{point}</p>
           </Card>
         ))}
       </section>
