@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import { Card } from "../ui/card";
 import { Button } from "../ui/button";
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
 type FormState = {
   Age: string;
   Income: string;
@@ -27,9 +29,6 @@ type PredictionResponse = {
   probability?: number;
   error?: string;
 };
-
-const apiBase =
-  process.env.NEXT_PUBLIC_API_BASE_URL?.replace(/\/$/, "") ?? "http://127.0.0.1:8000";
 
 const initialForm: FormState = {
   Age: "35",
@@ -175,7 +174,7 @@ export function PredictForm() {
     for (const key of numericFields) payload[key] = Number(form[key]);
 
     try {
-      const response = await fetch(`${apiBase}/predict`, {
+      const response = await fetch(`${API_URL}/predict`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ data: payload }),
