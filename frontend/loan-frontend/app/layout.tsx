@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="dark" style={{ colorScheme: "dark" }}>
       <body
         className={`${inter.variable} antialiased selection:bg-[#e78a53] selection:text-[#121113]`}
       >
